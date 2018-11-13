@@ -9,8 +9,7 @@ function append(parent, el) {
 
 function uppdatera(){
   const div = document.getElementById('departures');
-  //Använd https://cors-anywhere.herokuapp.com/ innan api vid lokal användning
-  const url = 'http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=9294&timewindow=10';
+  const url = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=9294&timewindow=10';
   fetch(url)
     .then((resp) => resp.json())
     .then(function (data) {
@@ -55,7 +54,7 @@ function uppdatera(){
 
 function maggan(){
   const div = document.getElementById('departures');
-  const url = 'http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=2633&timewindow=10';
+  const url = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=2633&timewindow=10';
   fetch(url)
     .then((resp) => resp.json())
     .then(function (data) {
@@ -99,7 +98,7 @@ function maggan(){
 
 function ds(){
   const div = document.getElementById('departures');
-  const url = 'http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=9201&timewindow=10';
+  const url = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=9201&timewindow=10';
   fetch(url)
     .then((resp) => resp.json())
     .then(function (data) {
@@ -143,7 +142,7 @@ function ds(){
 
 function storningds(){
   const ul = document.getElementById('storning');
-  const url2 = 'http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=9201';
+  const url2 = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=9201';
   fetch(url2)
     .then((resp) => resp.json())
     .then(function (data) {
@@ -164,7 +163,7 @@ function storningds(){
 
 function storningmaggan(){
   const ul = document.getElementById('storning');
-  const url2 = 'http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=2633';
+  const url2 = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=2633';
   fetch(url2)
     .then((resp) => resp.json())
     .then(function (data) {
@@ -185,7 +184,7 @@ function storningmaggan(){
 
 function storninglilje(){
   const ul = document.getElementById('storning');
-  const url2 = 'http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=9294';
+  const url2 = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=9294';
   fetch(url2)
     .then((resp) => resp.json())
     .then(function (data) {
