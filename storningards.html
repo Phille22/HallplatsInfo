@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Störningar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body onload="storningds()">
+    <form action="ds.html">
+        <input type="button" value="Uppdatera" onclick="storningds()">
+        <input type="submit" id="storningknapp" value="HållplatsInfo"/>
+    </form>
+    <h1>Störningsinfo</h1>
+    <h2>Danderyds sjukhus</h2>
+    <select name="stationer" onchange="location = this.value;">
+        <option value="" disabled selected>Byt hållplats</option>    
+        <option value="storningards.html">Danderyds sjukhus</option>
+        <option value="storningarlilje.html">Liljeholmen</option>
+        <option value="storningarmaggan.html">Margeretelundsskolan</option>
+    </select>
+
+<div id="storning">
+        <script src="main.js"></script>
+    </div>
+    <br>
+    <hr>
+    
+
+
+
+</body>
+</html>
