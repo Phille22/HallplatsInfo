@@ -20,7 +20,6 @@ function uppdatera(){
         div1.innerHTML = '<div class ="div1"></div>'
           var devtext = "";
           var gangvag = parseInt(document.getElementById("gangvag").value);
-          sessionStorage.setItem("gangvag", gangvag)
           var avgangtid = parseInt (departure.DisplayTime.replace(" min", ""));
           if(departure.Deviations != null)
           {
@@ -30,7 +29,6 @@ function uppdatera(){
               devtext += obj.Text;
             }
           }
-        gangvag.value = sessionStorage.getItem("gangvag");
          var totaltid = avgangtid - gangvag;
          if(isNaN(totaltid) || avgangtid < gangvag){ 
            totaltid = ""
@@ -67,7 +65,6 @@ function maggan(){
         div1.innerHTML = '<div class ="div1"></div>'
           var devtext = "";
           var gangvag = parseInt(document.getElementById("gangvag").value);
-          sessionStorage.setItem("gangvag", gangvag)
           var avgangtid = parseInt (departure.DisplayTime.replace(" min", ""));
           if(departure.Deviations != null)
           {
@@ -77,7 +74,6 @@ function maggan(){
               devtext += obj.Text;
             }
           }
-          gangvag.value = sessionStorage.getItem("gangvag");
           var totaltid = avgangtid - gangvag;
           if(isNaN(totaltid) || avgangtid < gangvag){ 
             totaltid = ""
