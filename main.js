@@ -8,15 +8,16 @@ function append(parent, el) {
 }
 
 function uppdatera(){
-  const div = document.getElementById('departures');
+  document.getElementById('departures').innerHTML = "";
+  var div = document.getElementById('departures');
   const url = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=9294&timewindow=10';
   fetch(url)
     .then((resp) => resp.json())
     .then(function (data) {
       let departures = data.ResponseData.Metros;
       return departures.map(function (departure) {
-        let div1 = createNode('div'),
-          div2 = createNode('div');
+        let div1 = createNode('div');
+            div2 = createNode('div');
         div1.innerHTML = '<div class ="div1"></div>'
           var devtext = "";
           var gangvag = parseInt(document.getElementById("gangvag").value);
@@ -53,6 +54,7 @@ function uppdatera(){
 }
 
 function maggan(){
+  document.getElementById('departures').innerHTML = "";
   const div = document.getElementById('departures');
   const url = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=2633&timewindow=10';
   fetch(url)
@@ -97,6 +99,7 @@ function maggan(){
 }
 
 function ds(){
+  document.getElementById('departures').innerHTML = "";
   const div = document.getElementById('departures');
   const url = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=539ac9fe254a4528b9b71a4f0c4f09a6&siteid=9201&timewindow=10';
   fetch(url)
