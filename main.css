@@ -1,11 +1,12 @@
-body {margin: 0px; padding: 0px;}
+body {margin: 0px; padding: 0px; font-family: Arial,sans-serif}
 #departures {width: 100%; margin-top: 3px; margin-right: -3px; border-style: solid; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden;}
-h1 {font-size: 38px; text-align: center;}
+h1 {font-size: 30px; text-align: center;}
 h2 {text-align: center; margin: 30px;}
 .avgang {font-size: 20px; text-align: right; width: auto;}
 .linje {font-size: 20px; width: auto; float: left;}
 .div1 {border-style: solid; border-left-style: hidden; border-right-style: hidden; border-bottom-style: hidden; height: auto; margin: 2px;}
 select {float: right; margin: 0px; margin-right: 5px;}
+#stInfo {margin-top: -15px;}
 h3 {margin: 0px; padding: 0px;}
 h4 {margin: 0px; padding: 0px;}
 hr {margin: 0px; padding: 0px;}

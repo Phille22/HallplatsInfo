@@ -7,6 +7,8 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
+
+//Funktionen för att visa avgångstabellen samt beräkna gångtid för Liljeholmen
 function uppdatera(){
   document.getElementById('departures').innerHTML = "";
   var div = document.getElementById('departures');
@@ -21,8 +23,15 @@ function uppdatera(){
         div1.innerHTML = '<div class ="div1"></div>'
           var devtext = "";
           var gangvag = parseInt(document.getElementById("gangvag").value);
-          var avgangtid = parseInt (departure.DisplayTime.replace(" min", ""));
-          if(departure.Deviations != null)
+          var avgangtid = departure.DisplayTime;
+          var n = avgangtid.includes(":");
+          if (n == true) {
+            var avgangtid = "";
+          }
+          else{
+            var avgangtid = parseInt(avgangtid.replace(" min", ""));
+          }
+         if(departure.Deviations != null)
           {
             for(var i = 0; i <departure.Deviations.length; i++)
             {
@@ -30,7 +39,7 @@ function uppdatera(){
               devtext += obj.Text;
             }
           }
-         var totaltid = avgangtid - gangvag;
+         var totaltid = avgangtid - gangvag; //Tiden när resenären ska börja gå mot hållplatsen
          if(isNaN(totaltid) || avgangtid < gangvag){ 
            totaltid = ""
          }
@@ -43,6 +52,7 @@ function uppdatera(){
          else{
            totaltid = "Gå om " + (totaltid - 1) +" min" 
          }
+        //Utskrift av avgångstabellen 
         div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + totaltid + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;
         append(div1, div2);
         append(div, div1);
@@ -53,6 +63,7 @@ function uppdatera(){
     });
 }
 
+//Funktionen för att visa avgångstabellen samt beräkna gångtid för Margeretelundsskolan
 function maggan(){
   document.getElementById('departures').innerHTML = "";
   const div = document.getElementById('departures');
@@ -67,7 +78,14 @@ function maggan(){
         div1.innerHTML = '<div class ="div1"></div>'
           var devtext = "";
           var gangvag = parseInt(document.getElementById("gangvag").value);
-          var avgangtid = parseInt (departure.DisplayTime.replace(" min", ""));
+          var avgangtid = departure.DisplayTime;
+          var n = avgangtid.includes(":");
+          if (n == true) {
+            var avgangtid = "";
+          }
+          else{
+            var avgangtid = parseInt(avgangtid.replace(" min", ""));
+          }
           if(departure.Deviations != null)
           {
             for(var i = 0; i <departure.Deviations.length; i++)
@@ -98,6 +116,7 @@ function maggan(){
     });
 }
 
+//Funktionen för att visa avgångstabellen samt beräkna gångtid för Danderyds Sjukhus
 function ds(){
   document.getElementById('departures').innerHTML = "";
   const div = document.getElementById('departures');
@@ -112,7 +131,14 @@ function ds(){
         div1.innerHTML = '<div class ="div1"></div>'
           var devtext = "";
           var gangvag = parseInt(document.getElementById("gangvag").value);
-          var avgangtid = parseInt (departure.DisplayTime.replace(" min", ""));
+          var avgangtid = departure.DisplayTime;
+          var n = avgangtid.includes(":");
+          if (n == true) {
+            var avgangtid = "Hejhopp";
+          }
+          else{
+            var avgangtid = parseInt(avgangtid.replace(" min", ""));
+          }
           if(departure.Deviations != null)
           {
             for(var i = 0; i <departure.Deviations.length; i++)
@@ -143,6 +169,7 @@ function ds(){
     });
 }
 
+//Funktionen för att visa störningsinfo för Danderyds Sjukhus
 function storningds(){
   const ul = document.getElementById('storning');
   const url2 = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=9201';
@@ -164,6 +191,7 @@ function storningds(){
     });
 }
 
+//Funktionen för att visa störningsinfo för Margeretelundsskolan
 function storningmaggan(){
   const ul = document.getElementById('storning');
   const url2 = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=2633';
@@ -174,7 +202,6 @@ function storningmaggan(){
       return storning.map(function (deviations) {
         let li = createNode('li'),
           span = createNode('span');
-  
         span.innerHTML = `${"<hr>" + "<h3>" + deviations.ScopeElements + "</h3>" + "<h4>" + deviations.Header + "</h4>" + deviations.Details}`;
         append(li, span);
         append(ul, li);
@@ -185,6 +212,7 @@ function storningmaggan(){
     });
 }
 
+//Funktionen för att visa störningsinfo för Liljeholmen
 function storninglilje(){
   const ul = document.getElementById('storning');
   const url2 = 'https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/deviations.json?key=56bfebf849d6410bbfdfee308126e4d3&siteId=9294';
