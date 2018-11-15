@@ -30,19 +30,19 @@ function uppdatera(){
             }
           }
          var totaltid = avgangtid - gangvag;
-         if(avgangtid == NaN || avgangtid < gangvag){ 
+         if(isNaN(totaltid) || avgangtid < gangvag){ 
            totaltid = ""
          }
          else if(avgangtid == gangvag){
            totaltid ="Gå nu"
          }
-         else if(avgangtid == 1){
-           totaltid = "Gå om " + totaltid
+         else if(totaltid == 1){
+           totaltid = "Gå nu"
          }
          else{
            totaltid = "Gå om " + (totaltid - 1) +" min" 
          }
-        div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + "(" + totaltid + ")" + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;
+        div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + totaltid + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;
         append(div1, div2);
         append(div, div1);
       })
@@ -75,19 +75,19 @@ function maggan(){
             }
           }
           var totaltid = avgangtid - gangvag;
-          if(avgangtid == NaN || avgangtid < gangvag){ 
+          if(isNaN(totaltid) || avgangtid < gangvag){ 
             totaltid = ""
           }
           else if(avgangtid == gangvag){
             totaltid ="Gå nu"
           }
-          else if(avgangtid == 1){
-            totaltid = "Gå om " + totaltid
+          else if(totaltid == 1){
+            totaltid = "Gå nu"
           }
           else{
             totaltid = "Gå om " + (totaltid - 1) +" min" 
           }
-          div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + "(" + totaltid + ")" + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;        append(div1, div2);
+          div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + totaltid + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;        append(div1, div2);
         append(div, div1);
       })
     })
@@ -119,19 +119,19 @@ function ds(){
             }
           }
           var totaltid = avgangtid - gangvag;
-          if(avgangtid == NaN || avgangtid < gangvag){ 
+          if(isNaN(totaltid)  || avgangtid < gangvag){ 
             totaltid = ""
           }
           else if(avgangtid == gangvag){
             totaltid ="Gå nu"
           }
-          else if(avgangtid == 1){
-            totaltid = "Gå om " + totaltid
+          else if(totaltid == 1){
+            totaltid = "Gå nu"
           }
           else{
             totaltid = "Gå om " + (totaltid - 1) +" min" 
           }
-          div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + "(" + totaltid + ")" + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;        append(div1, div2);
+          div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + totaltid + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;        append(div1, div2);
         append(div, div1);
       })
     })

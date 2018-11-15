@@ -1,6 +1,6 @@
 body {margin: 0px; padding: 0px;}
 #departures {width: 100%; margin-top: 3px; margin-right: -3px; border-style: solid; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden;}
-h1 {font-size: 40px; text-align: center;}
+h1 {font-size: 38px; text-align: center;}
 h2 {text-align: center; margin: 30px;}
 .avgang {font-size: 20px; text-align: right; width: auto;}
 .linje {font-size: 20px; width: auto; float: left;}
