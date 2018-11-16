@@ -7,23 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
-
 <body onload="ds()">
     <form action="storningards.html">
-        <input type="button" value="Uppdatera" onclick="ds()">
-        <input type="submit" id="storningknapp" value="Störningsinfo"/>
+        <input type="button" id="uppdateraknapp" value="Uppdatera" onclick="ds()"> <!---Knapp för att uppdatera sidan-->
+        <input type="submit" id="storningknapp" value="StörningsInfo"/> <!---Knapp för StörningsInfo-->
     </form>
         <h1>Danderyds sjukhus</h1>
-        <input type="number" id="gangvag" placeholder="Gångväg" onchange="ds()">
-        <select name="stationer" onchange="location = this.value;">
+        <input type="number" id="gangvag" placeholder="Gångväg" onchange="ds()"> <!--Gångvägsinput-->
+        <select name="stationer" id="stationer" onchange="location = this.value;"> <!---Byta station-->
             <option value="" disabled selected>Byt hållplats</option>    
             <option value="storningards.html">Danderyds sjukhus</option>
             <option value="index.html">Liljeholmen</option>
             <option value="maggan.html">Margeretelundsskolan</option>
-        </select>
-   
+        </select>   
         <div id="departures">
-                <script src="main.js"></script>
-            </div>         
+                <script src="main.js"></script>           
+        </div>         
 </body>
 </html>

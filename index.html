@@ -7,26 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
-
 <body onload="uppdatera()">
-
     <form action="storningarlilje.html">
-        <input type="button" value="Uppdatera" onclick="window.location.reload()">
-        <input type="submit" id="storningknapp" value="Störningsinfo"/>
+        <input type="button" id="uppdateraknapp" value="Uppdatera" onclick="window.location.reload()"> <!---Knapp för att uppdatera sidan-->
+        <input type="submit" id="storningknapp" value="StörningsInfo"/> <!---Knapp för StörningsInfo-->
     </form>
 <h1>Liljeholmen</h1>
-<input type="number" id="gangvag" placeholder="Gångväg" onchange="uppdatera()">
-<select name="stationer" aria-placeholder="Välj station" onchange="location = this.value;">
-<option value="" disabled selected>Byt hållplats</option>    
-<option value="ds.html">Danderyds sjukhus</option>
-<option value="index.html">Liljeholmen</option>
-<option value="maggan.html">Margeretelundsskolan</option>
+<input type="number" id="gangvag" placeholder="Gångväg" onchange="uppdatera()"> <!--Gångvägsinput-->
+<select name="stationer" id="stationer" aria-placeholder="Välj station" onchange="location = this.value;"> <!---Byta station-->
+    <option value="" disabled selected>Byt hållplats</option>    
+    <option value="ds.html">Danderyds sjukhus</option>
+    <option value="index.html">Liljeholmen</option>
+    <option value="maggan.html">Margeretelundsskolan</option>
 </select>
-
-
-<div id="departures">
+    <div id="departures">
         <script src="main.js"></script>
-    </div>
-  
+    </div>  
 </body>
 </html>

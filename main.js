@@ -1,13 +1,9 @@
-
 function createNode(element) {
   return document.createElement(element);
 }
-
 function append(parent, el) {
   return parent.appendChild(el);
 }
-
-
 //Funktionen för att visa avgångstabellen samt beräkna gångtid för Liljeholmen
 function uppdatera(){
   document.getElementById('departures').innerHTML = "";
@@ -39,6 +35,7 @@ function uppdatera(){
               devtext += obj.Text;
             }
           }
+          //Beräkning av gångtid
          var totaltid = avgangtid - gangvag; //Tiden när resenären ska börja gå mot hållplatsen
          if(isNaN(totaltid) || avgangtid < gangvag){ 
            totaltid = ""
@@ -62,7 +59,6 @@ function uppdatera(){
       console.log(error);
     });
 }
-
 //Funktionen för att visa avgångstabellen samt beräkna gångtid för Margeretelundsskolan
 function maggan(){
   document.getElementById('departures').innerHTML = "";
@@ -94,7 +90,8 @@ function maggan(){
               devtext += obj.Text;
             }
           }
-          var totaltid = avgangtid - gangvag;
+          //Beräkning av gångtid
+          var totaltid = avgangtid - gangvag; //Tiden när resenären ska börja gå mot hållplatsen
           if(isNaN(totaltid) || avgangtid < gangvag){ 
             totaltid = ""
           }
@@ -107,6 +104,7 @@ function maggan(){
           else{
             totaltid = "Gå om " + (totaltid - 1) +" min" 
           }
+          //Utskrift av avgångstabellen
           div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + totaltid + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;        append(div1, div2);
         append(div, div1);
       })
@@ -115,7 +113,6 @@ function maggan(){
       console.log(error);
     });
 }
-
 //Funktionen för att visa avgångstabellen samt beräkna gångtid för Danderyds Sjukhus
 function ds(){
   document.getElementById('departures').innerHTML = "";
@@ -147,7 +144,8 @@ function ds(){
               devtext += obj.Text;
             }
           }
-          var totaltid = avgangtid - gangvag;
+          //Beräkning av gångtid
+          var totaltid = avgangtid - gangvag; //Tiden när resenären ska börja gå mot hållplatsen
           if(isNaN(totaltid)  || avgangtid < gangvag){ 
             totaltid = ""
           }
@@ -160,6 +158,7 @@ function ds(){
           else{
             totaltid = "Gå om " + (totaltid - 1) +" min" 
           }
+          //Utskrift av avgångstabellen
           div2.innerHTML = `<div class ="linje">${departure.LineNumber + " " + departure.Destination + '</div><div class="avgang">' + departure.DisplayTime + '<div class="ag">' + totaltid + "</div></div>" + '<div class ="dev">' + devtext + "</div>"}`;        append(div1, div2);
         append(div, div1);
       })
@@ -168,7 +167,6 @@ function ds(){
       console.log(error);
     });
 }
-
 //Funktionen för att visa störningsinfo för Danderyds Sjukhus
 function storningds(){
   const ul = document.getElementById('storning');
@@ -180,7 +178,7 @@ function storningds(){
       return storning.map(function (deviations) {
         let li = createNode('li'),
           span = createNode('span');
-  
+        //Utskrift av störningsinfo
         span.innerHTML = `${"<hr>" + "<h3>" + deviations.ScopeElements + "</h3>" + "<h4>" + deviations.Header + "</h4>" + deviations.Details}`;
         append(li, span);
         append(ul, li);
@@ -190,7 +188,6 @@ function storningds(){
       console.log(error);
     });
 }
-
 //Funktionen för att visa störningsinfo för Margeretelundsskolan
 function storningmaggan(){
   const ul = document.getElementById('storning');
@@ -202,6 +199,7 @@ function storningmaggan(){
       return storning.map(function (deviations) {
         let li = createNode('li'),
           span = createNode('span');
+          //Utskrift av störningsinfo
         span.innerHTML = `${"<hr>" + "<h3>" + deviations.ScopeElements + "</h3>" + "<h4>" + deviations.Header + "</h4>" + deviations.Details}`;
         append(li, span);
         append(ul, li);
@@ -211,7 +209,6 @@ function storningmaggan(){
       console.log(error);
     });
 }
-
 //Funktionen för att visa störningsinfo för Liljeholmen
 function storninglilje(){
   const ul = document.getElementById('storning');
@@ -223,7 +220,7 @@ function storninglilje(){
       return storning.map(function (deviations) {
         let li = createNode('li'),
           span = createNode('span');
-  
+        //Utskrift av störningsinfo
         span.innerHTML = `${"<hr>" + "<h3>" + deviations.ScopeElements + "</h3>" + "<h4>" + deviations.Header + "</h4>" + deviations.Details}`;
         append(li, span);
         append(ul, li);
@@ -233,4 +230,3 @@ function storninglilje(){
       console.log(error);
     });
 }
-

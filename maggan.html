@@ -9,22 +9,19 @@
 </head>
 <body onload="maggan()">
     <form action="storningarmaggan.html">
-        <input type="button" value="Uppdatera" onclick="storningarmaggan()">
-        <input type="submit" id="storningknapp" value="Störningsinfo"/>
+        <input type="button" id="uppdateraknapp" value="Uppdatera" onclick="storningarmaggan()"> <!---Knapp för att uppdatera sidan-->
+        <input type="submit" id="storningknapp" value="StörningsInfo"/> <!---Knapp för StörningsInfo-->
     </form>
     <h1>Margeretelundsskolan</h1>
-    <input type="number" id="gangvag" placeholder="Gångväg" onchange="maggan()">
-    <select name="stationer" aria-placeholder="Välj station" onchange="location = this.value;">
+    <input type="number" id="gangvag" placeholder="Gångväg" onchange="maggan()"> <!--Gångvägsinput-->
+    <select name="stationer" id="stationer" aria-placeholder="Välj station" onchange="location = this.value;"> <!---Byta station-->
         <option value="" disabled selected>Byt hållplats</option>    
         <option value="ds.html">Danderyds sjukhus</option>
         <option value="index.html">Liljeholmen</option>
         <option value="maggan.html">Margeretelundsskolan</option>
     </select>
-
-
         <div id="departures">
-                <script src="main.js"></script>
-            </div>
-          
-        </body>
+            <script src="main.js"></script>
+        </div>   
+</body>
 </html>
